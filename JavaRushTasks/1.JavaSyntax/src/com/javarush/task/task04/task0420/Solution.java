@@ -10,20 +10,25 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Solution {
-    public static void faner(int kol) throws IOException {
-        int[] pri = new int[kol];
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        for (int i = 0; i < kol; i++) {
-            System.out.println("Введите " + (i + 1) + "-е число");
-            String sNum = br.readLine();
-            pri[i] = Integer.parseInt(sNum);
-        }
-        Arrays.sort(pri);
-        System.out.println(Arrays.toString(pri));
-    }
-    public static void main(String[] args) throws Exception {
 
-        faner(3);
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int x = Integer.parseInt(reader.readLine());
+        int y = Integer.parseInt(reader.readLine());
+        int z = Integer.parseInt(reader.readLine());
+        if (x >= y && x >= z && y > z) {
+            System.out.println(x + " " + y + " " + z);
+        } else if (x >= y && z >= y && x >= z) {
+            System.out.println(x + " " + z + " " + y);
+        } else if (y >= x && y >= z && x >= z) {
+            System.out.println(y + " " + x + " " + z);
+        } else if (y >= x && y >= z && z >= x) {
+            System.out.println(y + " " + z + " " + x);
+        } else if (z >= x && z >= y && x >= y) {
+            System.out.println(z + " " + x + " " + y);
+        } else if (z >= x && z >= y && y >= x) {
+            System.out.println(z + " " + y + " " + x);
+        }
 
     }
 }
